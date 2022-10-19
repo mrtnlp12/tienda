@@ -1,0 +1,15 @@
+<% if (currentPage !== 1 && previusPage !== 1) { %>
+<a href="?page=1"> First </a>
+<% } %> <% if (currentPage > 1) { %>
+<a href="?page=<%= previusPage %>"> <%= previusPage %> </a>
+<% } %>
+<a href="?page=<%= currentPage %>" class="active"><%= currentPage %></a>
+
+<% if ( 2 * currentPage < totalProducts ) { %>
+<a href="?page=<%= nextPage %>"> <%= nextPage %> </a>
+<% } %> <% if (currentPage !== Math.ceil( totalProducts / 2) && nextPage !==
+Math.ceil( totalProducts / 2 )) { %>
+<a href="?page=<%= Math.ceil( totalProducts / 2 ) %>">
+  <%= Math.ceil( totalProducts / 2 ) %>
+</a>
+<% } %>
